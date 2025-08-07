@@ -6,9 +6,13 @@ The formula for conversion is: Fahrenheit = (Celsius * 9/5) + 32
 This task should help you practice with map for transformation purposes.
 """
 ### GIVEN:
-celsius_temps = [0, 30, 100]
+    # celsius_temps = [0, 30, 100]
 
 ### YOUR CODE HERE
+    # def celsius_to_fahrenheit(celsius_temps):
+    #     return list(map(lambda c: (c * 9/5) + 32, celsius_temps))
+    # # TEST:
+    # print(celsius_to_fahrenheit(celsius_temps))
 
 ### EXPECTED OUTPUT:
 # [32.0, 86.0, 212.0]
@@ -21,14 +25,18 @@ This task should help you practice with map and filter function for transformati
 """
 
 ### GIVEN:
-users = [
-    {'name':'Maria', 'balance': 2000},
-    {'name':'Petar', 'balance': -189},
-    {'name':'Ivan', 'balance': 3200},
-    {'name':'Asen', 'balance': -2890},
-]
+    # users = [
+    #     {'name':'Maria', 'balance': 2000},
+    #     {'name':'Petar', 'balance': -189},
+    #     {'name':'Ivan', 'balance': 3200},
+    #     {'name':'Asen', 'balance': -2890},
+    # ]
 
 ### YOUR CODE HERE
+    # def get_positive_balance_users(users):
+    #     return list(map(lambda user: user['name'], filter(lambda user: user['balance'] > 0, users)))
+# # TEST:
+    # print(get_positive_balance_users(users))
 
 ### EXPECTED OUTPUT:
 # ['Maria', 'Ivan']
@@ -40,12 +48,17 @@ This task should help you practice with map and filter function for transformati
 """
 
 ### GIVEN:
-quotes = [
-    'Nothing travels faster than the speed of light, with the possible exception of bad news, which obeys its own special laws',
-    'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.'
-]
+# quotes = [
+#     'Nothing travels faster than the speed of light, with the possible exception of bad news, which obeys its own special laws',
+#     'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.'
+# ]
 
 ### YOUR CODE HERE
+# def filter_words(quotes):
+#     return [list(filter(lambda word: word.startswith('t') and len(word) > 3, quote.split())) for quote in quotes]
+
+# # TEST:
+# print(filter_words(quotes))
 
 ### EXPECTED OUTPUT:
 # [['travels', 'than'], ['that', 'trying']]
@@ -65,6 +78,11 @@ quotes = [
 ]
 
 ### YOUR CODE HERE
+def count_total_words(quotes):
+    from functools import reduce
+    return reduce(lambda acc, quote: acc + [len(quote.split())], quotes, [])
+# TEST:
+print(count_total_words(quotes))
 
 ### EXPECTED OUTPUT:
 # [21, 21]
