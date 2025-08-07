@@ -5,14 +5,20 @@ Inside this module, define two functions: one that calculates the area of a circ
 Then, write a script that imports this module and uses these functions.
 """
 
-### Your script to use custom_math
+# ### Your script to use custom_math
+#     # In custom_math.py, define the functions as follows:
+#     # def circle_area(radius):
+#     #     from math import pi
+#     #     return pi * radius ** 2
+#     # def square_area(side):
+#     #     return side ** 2
+# import custom_math as cm
 
-
-### Test:
+# ### Test:
 # radius = float(input("Enter the radius of the circle: "))
 # side = float(input("Enter the side length of the square: "))
-# print(f"The area of the circle is: {circle_area(radius)}")
-# print(f"The area of the square is: {square_area(side)}")
+# print(f"The area of the circle is: {cm.circle_area(radius)}")
+# print(f"The area of the square is: {cm.square_area(side)}")
 
 
 ### EXPECTED OUTPUT:
@@ -30,12 +36,13 @@ Finally, write a script that uses this package to load data and compute its aver
 """
 
 ### Your script to use data_processing package
-
+import data_processing.loader
+import data_processing.analyzer
 
 # Test:
-# data = loader.load_data()
-# average = analyzer.calculate_average(data)
-# print(f"The average is: {average}")
+data = data_processing.loader.load_data()
+average = data_processing.analyzer.calculate_average(data)
+print(f"The average is: {average}")
 
 ### EXPECTED OUTPUT:
 # The average is: 30.0
