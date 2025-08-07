@@ -5,10 +5,27 @@ Write an EvensIterator class, such that its objects can be used in for loops, it
 
 
 ### YOUR CODE HERE
+# class EvensIterator:
+#     def __init__(self, start, end):
+#         self.start = start if start % 2 == 0 else start + 1
+#         self.end = end
+#         self.current = self.start
 
+#     def __iter__(self):
+#         return self
+    
+#     def __next__(self):
+#         if self.current > self.end:
+#             raise StopIteration
+#         else:
+#             even_number = self.current
+#             self.current += 2
+#             return even_number
+    
+    
 
-### TEST:
-# for x in EvensRange(1,10):
+# ### TEST:
+# for x in EvensIterator(1,10):
 #     print(x, end=",")
 
 ### EXPECTED OUTPUT
@@ -23,11 +40,16 @@ in specified [start, end] range (both inclusive).
 
 
 ### YOUR CODE HERE
+# def evens_generator(start, end):
+#     if start % 2 != 0:
+#         start += 1
 
+#     for number in range(start, end + 1, 2):
+#         yield number
 
-### TEST:
+# ### TEST:
 # for x in evens_generator(1,10):
-#     print(x, end=",")
+#     print(x, end=", ")
 
 ### EXPECTED OUTPUT
 # 2,4,6,8,10,
@@ -47,9 +69,11 @@ print( chr(1071) )
 
 
 ### YOUR CODE HERE
+# def cyrilic_letter_generator():
+#     for code in range(1040, 1072):
+#         yield chr(code)
 
-
-# TEST:
+# # TEST:
 # for l in cyrilic_letter_generator():
 #     print(l, end=",")
 
@@ -62,19 +86,39 @@ Create both a generator function (words_from_sentence) and an iterator class (Wo
 one at a time when iterated over.
 Your implementation should handle empty sentences properly.
 """
+# Case 1
+    # class WordsFromSentence:
+    #     def __init__(self, sentence):
+    #         self.words = sentence.split()
+    #         self.index = 0
 
+    #     def __iter__(self):
+    #         return self
+
+    #     def __next__(self):
+    #         if self.index < len(self.words):
+    #             word = self.words[self.index]
+    #             self.index += 1
+    #             return word
+    #         else:
+    #             raise StopIteration
+# Case 2
+    # def words_from_sentence(sentence):
+    #     words = sentence.split()
+    #     for word in words:
+    #         yield word
 
 ### YOUR CODE HERE
 
 
-# # TEST case 1: Using the iterator class
+# # TEST Case 1: Using the iterator class
 # print("Test with iterator class:")
-# for w in WordsFromSentence("this is a test"):
+# for w in WordsFromSentence("This is a test"):
 #     print(w)
 
-# # TEST case 2: Using the generator function
+# # TEST Case 2: Using the generator function
 # print("\nTest with generator function:")
-# for w in words_from_sentence("this is a test"):
+# for w in words_from_sentence("This is a test"):
 #     print(w)
 
 ### EXPECTED OUTPUT:
