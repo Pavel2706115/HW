@@ -13,7 +13,21 @@ Create an instance of the 'Car' class with information about a car and demonstra
 
 
 ### Define the Car class
+    # class Car:
+    #     def __init__(self, make, model, year):
+    #         self.make = make
+    #         self.model = model
+    #         self.year = year
 
+    #     def start_engine(self):
+    #         print(f"Engine started for {self.make} {self.model} {self.year}")
+
+    #     def stop_engine(self):
+    #         print(f"Engine stopped for {self.make} {self.model} {self.year}")
+
+    # car1 = Car("Toyota", "Camry", 2022)
+    # car1.start_engine()
+    # car1.stop_engine()
 
 ### TEST
 # car1 = Car("Toyota", "Camry", 2022)
@@ -41,7 +55,29 @@ Create an instance of the 'Student' class with your own information and demonstr
 
 
 ### Define the Student class
+    # class Student:
+    #     def __init__(self, name, student_id, courses=None):
+    #         self.name = name
+    #         self.student_id = student_id
+    #         if courses is None:
+    #             self.courses = []
+    #         else:
+    #             self.courses = courses
 
+    #     def add_course(self, course_name):
+    #         self.courses.append(course_name)
+    #     def remove_course(self, course_name):
+    #         if course_name in self.courses:
+    #             self.courses.remove(course_name)
+    #     def list_courses(self):
+    #         print("Courses:", ",".join(self.courses))
+
+    # student1 = Student("Alice", 12345)
+    # student1.add_course("Math")
+    # student1.add_course("History")
+    # student1.list_courses()
+
+        
 
 ### TEST
 # student1 = Student("Alice", 12345)
@@ -54,7 +90,9 @@ Create an instance of the 'Student' class with your own information and demonstr
 
 
 # ---------------------------------- Task 3 ---------------------------------- #
-""" DESCRIPTION:
+
+"""
+DESCRIPTION:
 Create a class called 'Book' to represent a book in a library system. The class should have the following attributes and methods:
 Attributes:
 - 'title': a string representing the title of the book.
@@ -74,12 +112,41 @@ Create instances of the 'Book' class and demonstrate the usage of the 'Library' 
 
 
 ### Define the Book class
+# class Book:
+#     def __init__ (self, title, author, isbn, year):
+#         self.title = title
+#         self.author = author
+#         self.isbn = isbn
+#         self.year = year
+#     def __str__(self):
+#         return f"Title: {self.title}\nAuthor: {self.author}\nISBN: {self.isbn}\nYear: {self.year}\n--------------------"
+    
 
+# ### Define the Library class
+# class Library:
+#     def __init__(self):
+#         self.books = []
+    
+#     def add_book(self, book):
+#         self.books.append(book)
+    
+#     def remove_book(self, isbn):
+#         for book in self.books:
+#             if book.isbn == isbn:
+#                 self.books.remove(book)
+#                 return
+    
+#     def find_book(self, isbn):
+#         for book in self.books:
+#             if book.isbn == isbn:
+#                 return book
+#         return None
+    
+#     def list_books(self):
+#         for book in self.books:
+#             print(book)
 
-### Define the Library class
-
-
-### TEST
+# ### TEST
 # book1 = Book("1984", "George Orwell", "123456789", 1949)
 # book2 = Book("To Kill a Mockingbird", "Harper Lee", "987654321", 1960)
 
@@ -90,15 +157,15 @@ Create instances of the 'Book' class and demonstrate the usage of the 'Library' 
 # print("List of books in the library:")
 # library.list_books()
 
-# # Remove a book
-# library.remove_book("123456789")
-# print("\nList of books after removal:")
-# library.list_books()
+# # # # Remove a book
+# # library.remove_book("123456789")
+# # print("\nList of books after removal:")
+# # library.list_books()
 
-# # Find a book
+# # # Find a book
 # book = library.find_book("987654321")
 # if book:
-#     print(f"\nFound book: {book}")
+#     print(f"\nFound book: \n{book}")
 # else:
 #     print("\nBook not found.")
 
@@ -144,15 +211,33 @@ Create an instance of the 'BankAccount' class with your own account information 
 
 
 ### Define the BankAccount class
+# class BankAccount:
+#     def __init__(self, account_number, initial_balance=0.0):
+#         self.account_number = account_number
+#         self.__balance = initial_balance  # Private attribute
 
+#     def deposit(self, amount):
+#         if amount > 0:
+#             self.__balance += amount
+#         else:
+#             print("Deposit amount must be positive.")
 
-### TEST:
+#     def withdraw(self, amount):
+#         if 0 < amount <= self.__balance:
+#             self.__balance -= amount
+#         else:
+#             print("Withdrawal amount must be positive and less than or equal to the current balance.")
+
+#     def get_balance(self):
+#         return self.__balance
+
+# ### TEST:
 # account1 = BankAccount("12345", 1000.0)
 # account1.deposit(500.0)
 # account1.withdraw(200.0)
 # print(account1.get_balance())
 
-# # Attempt to directly modify the balance (no effect, as __balance is private):
+# # # Attempt to directly modify the balance (no effect, as __balance is private):
 # account1.__balance = 0
 # print(account1.get_balance())
 
@@ -173,16 +258,31 @@ Demonstrate the usage of the 'Rectangle' and 'Circle' classes by creating instan
 """
 
 
-### Define the Shape base class
+# ### Define the Shape base class
+# class Shape:
+#     def __init__(self, name):
+#         self.name = name
+#     def area(self):
+#         return "Not implemented for common shape"
 
+# ### Define the Rectangle class inheriting from Shape
+# class Rectangle(Shape):
+#     def __init__(self, name, width, height):
+#         super().__init__(name)
+#         self.width = width
+#         self.height = height
+#     def area(self):
+#         return self.width * self.height
 
-### Define the Rectangle class inheriting from Shape
+# ### Define the Circle class inheriting from Shape
+# class Circle(Shape):
+#     def __init__(self, name, radius):
+#         super().__init__(name)
+#         self.radius = radius
+#     def area(self):
+#         return 3.14 * (self.radius ** 2)
 
-
-### Define the Circle class inheriting from Shape
-
-
-### TEST:
+# ### TEST:
 # rectangle1 = Rectangle("Rectangle", 5.0, 3.0)
 # circle1 = Circle("Circle", 2.0)
 # print(rectangle1.area())
