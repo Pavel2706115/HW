@@ -1,3 +1,5 @@
 .vscode/
 HW1_Intro/
+git rm -r --cached .vscode HW1_Intro
+git commit -m "Remove ignored folders from repository"
 git push
