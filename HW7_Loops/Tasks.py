@@ -4,6 +4,9 @@
 """
 
 ### Your code here
+    # input_n = int(input("Enter stars number: "))
+    # for i in range(1, input_n + 1):
+    #     print('*' * i)
 
 ### EXPECTED OUTPUT:
 # Enter stars number: 4
@@ -21,6 +24,15 @@
 """
 
 ### Your code
+    # words = []
+    # while True:
+    #     word = str(input("Enter a word (or '0' to stop): "))
+    #     if word == '0':
+    #         break
+    #     if word and word[0].lower() in 'aeiou':
+    #         words.append(word)
+    # print(f"Words that start with a vowel: {words}")
+
 
 ### EXPECTED OUTPUT:
 # Enter a word (or '0' to stop): atom
@@ -37,9 +49,16 @@
 """
 
 ### Given:
-words = ["hello", "world", "python", "is", "fun", "and", "useful"]
+    # words = ["hello", "world", "python", "is", "fun", "and", "useful"]
 
 ### Your code here
+    # length_dict = {}
+    # for word in words:
+    #     length = len(word)
+    #     key = length_dict.get(length, [])
+    #     key.append(word)
+    #     length_dict[length] = key
+    # print(length_dict)
 
 ### EXPECTED OUTPUT:
 # {5: ['hello', 'world'], 6: ['python'], 2: ['is'], 3: ['fun', 'and'], 7: ['useful']}
@@ -58,10 +77,16 @@ words = ["hello", "world", "python", "is", "fun", "and", "useful"]
 """
 
 ### Given
-refrigerated = {'dairy', 'meats', 'frozen foods', 'seafood', 'deli'}
-sale = {'cereals', 'dairy', 'snacks', 'frozen foods', 'beverages'}
+    # refrigerated = {'dairy', 'meats', 'frozen foods', 'seafood', 'deli'}
+    # sale = {'cereals', 'dairy', 'snacks', 'frozen foods', 'beverages'}
 
 ### Your code here
+    # intersection = refrigerated.intersection(sale)
+    # sale_not_refrigerated = sale.difference(refrigerated)
+    # suggested_new_sale = refrigerated.difference(sale)
+    # print(f"Categories both refrigerated and on sale: {intersection}")
+    # print(f"Sale categories not needing refrigeration: {sale_not_refrigerated}")
+    # print(f"Suggested new sale categories from refrigerated items: {suggested_new_sale}")
 
 ### EXPECTED OUTPUT:
 # Categories both refrigerated and on sale: {'dairy', 'frozen foods'}
