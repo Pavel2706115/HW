@@ -36,13 +36,13 @@ Finally, write a script that uses this package to load data and compute its aver
 """
 
 ### Your script to use data_processing package
-import data_processing.loader
-import data_processing.analyzer
+# import data_processing.loader
+# import data_processing.analyzer
 
-# Test:
-data = data_processing.loader.load_data()
-average = data_processing.analyzer.calculate_average(data)
-print(f"The average is: {average}")
+# # Test:
+# data = data_processing.loader.load_data()
+# average = data_processing.analyzer.calculate_average(data)
+# print(f"The average is: {average}")
 
-### EXPECTED OUTPUT:
-# The average is: 30.0
+# ### EXPECTED OUTPUT:
+# # The average is: 30.0
