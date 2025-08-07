@@ -72,17 +72,17 @@ This task should help you practice using map and reduce for aggregation purposes
 """
 
 ### GIVEN:
-quotes = [
-    'Nothing travels faster than the speed of light, with the possible exception of bad news, which obeys its own special laws',
-    'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.'
-]
+# quotes = [
+#     'Nothing travels faster than the speed of light, with the possible exception of bad news, which obeys its own special laws',
+#     'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.'
+# ]
 
 ### YOUR CODE HERE
-def count_total_words(quotes):
-    from functools import reduce
-    return reduce(lambda acc, quote: acc + [len(quote.split())], quotes, [])
-# TEST:
-print(count_total_words(quotes))
+# def count_total_words(quotes):
+#     from functools import reduce
+#     return reduce(lambda acc, quote: acc + [len(quote.split())], quotes, [])
+# # TEST:
+# print(count_total_words(quotes))
 
 ### EXPECTED OUTPUT:
 # [21, 21]
