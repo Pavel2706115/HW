@@ -12,9 +12,21 @@ The function must handle potential errors, such as:
 
 
 ### YOUR CODE HERE
+# def get_numeric_input():
+#     while True:
+#         try:
+#             user_input = input("Please enter a number: ")
+#             return float(user_input)
+#         except ValueError:
+#             print("Invalid input. Please enter a numeric value.")
+#         except KeyboardInterrupt:
+#             print("\nInput cancelled by user. Exiting...")
+#             exit(0)
+#         except Exception as e:
+#             print(f"An unexpected error occurred: {e}")
 
 
-# TEST:
+# # TEST:
 # number = get_numeric_input()
 # print(f"You entered: {number}")
 
@@ -30,7 +42,7 @@ The function must handle potential errors, such as:
 
 # ---------------------------------- Task 2 ---------------------------------- #
 """ DESCRIPTION:
-Defin function get_valid_username(), that prompts the user to enter their name.
+Define function get_valid_username(), that prompts the user to enter their name.
 Ensure the entered name meets the following criteria:
 1. Contains only letters.
     - tip: you can use the string.isalpha() method
@@ -47,9 +59,21 @@ Upon a valid username, the function should return the username.
 
 
 ### YOUR CODE HERE
+# def get_valid_username():
+#     while True:
+#         try:
+#             username = input("Please enter your name: ")
+#             if not username.isalpha():
+#                 raise ValueError("Name must contain only letters.")
+#             if not username[0].isupper():
+#                 raise ValueError("Name must start with an uppercase letter.")
+#             if len(username) < 2:
+#                 raise ValueError("Name must be at least 2 characters long.")
+#             return username
+#         except ValueError as e:
+#             print(f"\tError: {e}")
 
-
-# TEST:
+# # TEST:
 # username = get_valid_username()
 # print(f"Hello, {username}!")
 
